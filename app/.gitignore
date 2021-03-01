@@ -1,4 +1,5 @@
 
+.idea/
 # Created by https://www.toptal.com/developers/gitignore/api/kotlin,android,androidstudio,java,intellij
 # Edit at https://www.toptal.com/developers/gitignore?templates=kotlin,android,androidstudio,java,intellij
 
@@ -340,3 +341,5 @@ Thumbs.db
 !/gradle/wrapper/gradle-wrapper.jar
 
 # End of https://www.toptal.com/developers/gitignore/api/kotlin,android,androidstudio,java,intellij
+/src/main/res/layout/
+/src/main/res/layout-v21/
