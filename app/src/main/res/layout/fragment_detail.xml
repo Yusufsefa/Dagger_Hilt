@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="itemViewState"
+            type="com.yyusufsefa.dependencyinjection.ui.DetailMovieViewState" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/detail_color"
+        tools:context=".ui.DetailFragment">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgDetailMovie"
+            imageUrl="@{itemViewState.movieImageUrl()}"
+            android:layout_width="100dp"
+            android:layout_height="120dp"
+            android:layout_margin="10dp"
+            android:maxWidth="100dp"
+            android:maxHeight="120dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/ic_launcher_background" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtDetailName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:text="Name"
+            android:textColor="@color/detail_txt_color"
+            android:textSize="17sp"
+            app:layout_constraintStart_toEndOf="@+id/imgDetailMovie"
+            app:layout_constraintTop_toTopOf="@+id/imgDetailMovie" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtNameValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="27dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:text="@{itemViewState.movieName()}"
+            android:textColor="@color/detail_value_txt"
+            android:textSize="15sp"
+            app:layout_constraintStart_toEndOf="@+id/txtDetailName"
+            app:layout_constraintTop_toTopOf="@id/txtDetailName"
+            tools:text="deneme" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtYear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Year"
+            android:textColor="@color/detail_txt_color"
+            android:textSize="17sp"
+            app:layout_constraintStart_toStartOf="@+id/txtDetailName"
+            app:layout_constraintTop_toBottomOf="@+id/txtDetailName" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtYearValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@{itemViewState.movieYear()}"
+            android:textColor="@color/detail_value_txt"
+            android:textSize="17sp"
+            app:layout_constraintStart_toStartOf="@+id/txtNameValue"
+            app:layout_constraintTop_toBottomOf="@+id/txtNameValue"
+            tools:text="Year" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Type"
+            android:textColor="@color/detail_txt_color"
+            android:textSize="17sp"
+            app:layout_constraintStart_toStartOf="@+id/txtYear"
+            app:layout_constraintTop_toBottomOf="@+id/txtYear" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtTypeValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@{itemViewState.movieType()}"
+            android:textColor="@color/detail_value_txt"
+            android:textSize="17sp"
+            app:layout_constraintStart_toStartOf="@+id/txtYearValue"
+            app:layout_constraintTop_toBottomOf="@+id/txtYearValue" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
